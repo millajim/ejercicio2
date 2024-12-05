@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registro de Venta </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #f8f9fa; 
+            }
+            .container {
+                margin-top: 50px; 
+                background-color: #ffffff; 
+                border-radius: 10px; 
+                padding: 40px; 
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            }
+            h1 {
+                color: #007bff; 
+                margin-bottom: 30px; 
+            }
+            .btn-primary {
+                background-color: #007bff; 
+                border-color: #007bff; 
+            }
+            .btn-primary:hover {
+                background-color: #0056b3; 
+                border-color: #0056b3; 
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container mt-5">
+            <h1 class="text-center">Registro de Venta de Entradas</h1>
+
+            <form th:action="@{/registro}" th:object="${registro}" method="post">
+
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" id="nombre" th:field="*{nombre}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" id="apellido" th:field="*{apellido}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="dni" class="form-label">Número de DNI:</label>
+                    <input type="text" id="dni" th:field="*{dni}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="lugarResidencia" class="form-label">Lugar de Residencia:</label>
+                    <input type="text" id="lugarResidencia" th:field="*{lugarResidencia}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="contactoEmergencia" class="form-label">Contacto en Caso de Emergencia:</label>
+                    <input type="text" id="contactoEmergencia" th:field="*{contactoEmergencia}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefonoPersonal" class="form-label">Número de Teléfono Personal:</label>
+                    <input type="text" id="telefonoPersonal" th:field="*{telefonoPersonal}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="tipoSangre" class="form-label">Tipo de Sangre:</label>
+                    <input type="text" id="tipoSangre" th:field="*{tipoSangre}" class="form-control" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="alergias" class="form-label">Alergias:</label>
+                    <input type="text" id="alergias" th:field="*{alergias}" class="form-control"/>
+                </div>
+
+                <div class="mb-3">
+                    <label for="kmCorrer" class="form-label">Número de KM a Correr:</label>
+                    <input type="number" id="kmCorrer" th:field="*{kmCorrer}" class="form-control" required />
+                </div>
+
+                <button type="submit" class='btn btn-primary'>Registrar Venta</button>
+
+            </form>
+        </div>
+
+        <script src="../path/to/jquery.min.js"></script> 
+        <script src="../path/to/popper.min.js"></script> 
+        <script src="../path/to/bootstrap.min.js"></script> 
+
+    </body>
+</html>
